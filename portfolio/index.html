@@ -1126,6 +1126,26 @@ Ewha Womans’ University.</p>
    <script src="js/jquery-2.1.3.min.js"></script>
    <script src="js/plugins.js"></script>
    <script src="js/main.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script>
+	    // Initialize EmailJS with your public key
+	    (function() {
+	        emailjs.init("708454567486-4n6edd8uaveviq0sg0i9us0tn9glb28i.apps.googleusercontent.com");
+	    })();
+
+	    document.getElementById('contactForm').addEventListener('submit', function(event) {
+	        event.preventDefault(); // Prevent page reload
+
+	        // Send the form data
+	        emailjs.sendForm('service_6nidw7c338909705', "template_4ysn97p", this)
+	            .then(function(response) {
+	                document.getElementById('message-success').innerText = "Feedback sent successfully!";
+	            }, function(error) {
+	                document.getElementById('message-warning').innerText = "Failed to send feedback.";
+	            });
+	    });
+	</script>
+
 
 </body>
 
