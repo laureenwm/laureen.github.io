@@ -1130,14 +1130,14 @@ Ewha Womans’ University.</p>
 	<script>
 	    // Initialize EmailJS with your public key
 	    (function() {
-	        emailjs.init("708454567486-4n6edd8uaveviq0sg0i9us0tn9glb28i.apps.googleusercontent.com");
+	        emailjs.init("")"
 	    })();
 
 	    document.getElementById('contactForm').addEventListener('submit', function(event) {
 	        event.preventDefault(); // Prevent page reload
 
 	        // Send the form data
-	        emailjs.sendForm('service_6nidw7c338909705', "template_4ysn97p", this)
+	        emailjs.sendForm('service', "template", this)
 	            .then(function(response) {
 	                document.getElementById('message-success').innerText = "Feedback sent successfully!";
 	            }, function(error) {
